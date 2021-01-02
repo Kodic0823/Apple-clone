@@ -22,11 +22,19 @@ a {
 }
 
 .global-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 44px;
     padding: 0 1rem;
 }
 
 .local-nav {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
     height: 52px;
     padding: 0 1rem;
     border-bottom: 1px solid #ddd;
@@ -152,7 +160,8 @@ a {
     color: white;
     background: darkorange;
 }
-.sticky-elem{
+
+.sticky-elem {
     display: none;
     position: fixed;
     top: 0;
@@ -160,6 +169,7 @@ a {
     width: 100%;
 
 }
+
 #show-scene-0 #scroll-section-0 .sticky-elem,
 #show-scene-1 #scroll-section-1 .sticky-elem,
 #show-scene-2 #scroll-section-2 .sticky-elem,
@@ -203,7 +213,7 @@ a {
     }
 
     .canvas-cation {
-        font-size: 2rem; 
+        font-size: 2rem;
     }
 
 }
