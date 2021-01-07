@@ -11,10 +11,10 @@
             heightNum: 5, //브라우저 높이의 5배로 scrollHeight셋팅
             scrollHeight: 0,
             objs: {
-                container: document.querySelector('#scroll-section-0')
-                messageA: document.querySelector('#scroll-section-0 .main-mesage.a')
-                messageB: document.querySelector('#scroll-section-0 .main-mesage.b')
-                messageC: document.querySelector('#scroll-section-0 .main-mesage.c')
+                container: document.querySelector('#scroll-section-0'),
+                messageA: document.querySelector('#scroll-section-0 .main-mesage.a'),
+                messageB: document.querySelector('#scroll-section-0 .main-mesage.b'),
+                messageC: document.querySelector('#scroll-section-0 .main-mesage.c'),
                 messageD: document.querySelector('#scroll-section-0 .main-mesage.d')
             },
             values: {
@@ -69,9 +69,26 @@
         document.body.setAttribute('id', `show-scene-${currentScene}`);
     }
 
+    function calcValues(values, currentYOffset) {
+        let rv;
+        // 현재 씬(스크롤섹션) 에서 스크롤된 범위를 비율로 구하기
+        let scrollRatio = currentYOffset / sceneInfo[currentScene].scrollHeight;
+
+        rv = parseInt(scrollRatio * 300 );
+
+        return rv;
+
+    }
+
     function playAnimaion() {
+        const values = sceneInfo[currentScene].values;
+        const objs = sceneInfo[currentScene].objs;
+        const currentYOffset = yOffset - prevScrollHeight;
+
         switch (currentScene) {
             case 0:
+                let messageA_opacity_0 = values.messageA_opacity[0];
+                let messageA_opacity_1 = values.messageA_opacity[1];
                 break;
             case 1:
                 break;
